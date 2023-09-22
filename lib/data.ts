@@ -6,6 +6,21 @@ import corpcommentImg from "@/public/corpcomment.png";
 import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
 
+import AWS from "../public/icons/aws.svg";
+import CSS from "../public/icons/css.svg";
+import Git from "../public/icons/git.svg";
+import HTML from "../public/icons/html.svg";
+import Javascript from "../public/icons/javascipt.svg";
+import MaterialUI from "../public/icons/material.svg";
+import Mongodb from "../public/icons/mongodb.svg";
+import Nestjs from "../public/icons/nestjs.svg";
+import Nextjs from "../public/icons/nextjs.svg";
+import Nodejs from "../public/icons/nodejs.svg";
+import Reactjs from "../public/icons/react.svg";
+import Redux from "../public/icons/redux.svg";
+import Tailwind from "../public/icons/tailwind.svg";
+import Typescript from "../public/icons/typescript.svg";
+
 export const links = [
   {
     name: "Home",
@@ -85,23 +100,18 @@ export const projectsData = [
 ] as const;
 
 export const skillsData = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Git",
-  "Tailwind",
-  "Prisma",
-  "MongoDB",
-  "Redux",
-  "GraphQL",
-  "Apollo",
-  "Express",
-  "PostgreSQL",
-  "Python",
-  "Django",
-  "Framer Motion",
+  { name: "HTML", pic: HTML },
+  { name: "CSS", pic: CSS },
+  { name: "JavaScript", pic: Javascript },
+  { name: "TypeScript", pic: Typescript },
+  { name: "React", pic: Reactjs },
+  { name: "Next.js", pic: Nextjs },
+  { name: "Node.js", pic: Nodejs },
+  { name: "Git", pic: Git },
+  { name: "Tailwind", pic: Tailwind },
+  { name: "MongoDB", pic: Mongodb },
+  { name: "Redux", pic: Redux },
+  { name: "NestJS", pic: Nestjs },
+  { name: "AWS Service", pic: AWS },
+  { name: "Material UI", pic: MaterialUI },
 ] as const;

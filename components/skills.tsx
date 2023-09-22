@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React from "react";
 import SectionHeading from "./section-heading";
 import { skillsData } from "@/lib/data";
@@ -33,7 +34,7 @@ export default function Skills() {
       <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
         {skillsData.map((skill, index) => (
           <motion.li
-            className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80"
+            className="flex flex-col items-center bg-white borderBlack rounded-xl center px-5 py-3 dark:bg-white/10 dark:text-white/80"
             key={index}
             variants={fadeInAnimationVariants}
             initial="initial"
@@ -42,8 +43,14 @@ export default function Skills() {
               once: true,
             }}
             custom={index}
+            whileHover={{ scale: 1.2, rotate: 0 }}
+            whileTap={{
+              scale: 0.8,
+              borderRadius: "25%",
+            }}
           >
-            {skill}
+            <Image src={skill.pic} alt="icon" width={70} height={70} />
+            {skill.name}
           </motion.li>
         ))}
       </ul>
