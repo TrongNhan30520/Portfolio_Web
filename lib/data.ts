@@ -2,9 +2,13 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import corpcommentImg from "../public/images/corpcomment.png";
-import rmtdevImg from "../public/images/rmtdev.png";
-import wordanalyticsImg from "../public/images/wordanalytics.png";
+import PJ1 from "../public/images/portfolio1.png";
+import PJ2 from "../public/images/portfolio2.png";
+import PJ3 from "../public/images/portfolio3.png";
+import PJ4 from "../public/images/portfolio4.png";
+import PJ5 from "../public/images/portfolio5.png";
+import PJ6 from "../public/images/portfolio6.png";
+import PJ7 from "../public/images/portfolio7.png";
 
 import AWS from "../public/icons/aws.svg";
 import CSS from "../public/icons/css.svg";
@@ -77,25 +81,28 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "Claritas",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-    imageUrl: corpcommentImg,
+      "I worked as a front-end developer on this startup project for about 1 years. Clients are high-rise building quality management companies.",
+    tags: ["ReactJs", "Nest.js", "MySQL", "Tailwind", "AWS Service"],
+    imageUrl: PJ1,
+    detail: "I worked as a front-end developer on this startup project for about 1 years. Clients are high-rise building qualitymanagement companies.I worked as a front- end developer on this startup project for about 1 years.Clients are high - rise buildinquality management companies.I worked as a front - end developer on this startup project for about 1 years.Clients are high - rise building quality management companies.",
   },
   {
     title: "rmtDev",
     description:
       "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
     tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-    imageUrl: rmtdevImg,
+    imageUrl: PJ2,
+    detail: "I worked as a front-end developer on this startup project for about 1 years. Clients are high-rise building quality management companies.",
   },
   {
     title: "Word Analytics",
     description:
       "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
     tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-    imageUrl: wordanalyticsImg,
+    imageUrl: PJ3,
+    detail: "I worked as a front-end developer on this startup project for about 1 years. Clients are high-rise building quality management companies.",
   },
 ] as const;
 

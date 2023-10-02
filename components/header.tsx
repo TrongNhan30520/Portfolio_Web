@@ -1,11 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 import { links } from "@/lib/data";
 import Link from "next/link";
 import clsx from "clsx";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import IcContact from "@/public/icons/Mail_custom_icon.json"
 
 export default function Header() {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
@@ -55,6 +57,7 @@ export default function Header() {
                     }}
                   ></motion.span>
                 )}
+                <Image src={IcContact} />
               </Link>
             </motion.li>
           ))}

@@ -34,18 +34,17 @@ export default function ParticleBackground() {
         loaded={particlesLoaded}
         options={{
           background: {
-            image: `${
-              theme === "dark"
-                ? "linear-gradient(45deg, #434343, #000000)"
-                : "linear-gradient(45deg, #DDDCFF, #7DC4F2)"
-            }`,
+            image: `${theme === "dark"
+              ? "linear-gradient(45deg, #434343, #000000)"
+              : "linear-gradient(45deg, #DDDCFF, #7DC4F2)"
+              }`,
           },
           fpsLimit: 400,
           interactivity: {
             events: {
               onClick: {
                 enable: true,
-                mode: ["pause"],
+                mode: ["push"],
               },
               onHover: {
                 enable: true,
@@ -88,7 +87,7 @@ export default function ParticleBackground() {
               enable: true,
               outMode: "bounce",
               random: true,
-              speed: 1,
+              speed: 0.7,
               straight: false,
               spin: {
                 acceleration: 3,
@@ -148,7 +147,7 @@ export default function ParticleBackground() {
                   src: "https://static-00.iconduck.com/assets.00/node-js-icon-1901x2048-mk1e13df.png",
                 },
                 {
-                  src: "https://assets.stickpng.com/images/5847f981cef1014c0b5e48be.png",
+                  src: "https://cdn.iconscout.com/icon/free/png-256/free-git-225996.png?f=webp",
                 },
                 {
                   src: "https://static-00.iconduck.com/assets.00/aws-icon-2048x2048-274bm1xi.png",

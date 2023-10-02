@@ -13,8 +13,10 @@ export default function Project({
   description,
   tags,
   imageUrl,
+  detail
 }: ProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const refDialog = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["0 1", "1.33 1"],
@@ -31,7 +33,9 @@ export default function Project({
       }}
       className="group mb-3 sm:mb-8 last:mb-0"
     >
-      <section className="bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition sm:group-even:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20">
+      <section onClick={() => {
+        refDialog.current.showModal()
+      }} className="bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden cursor-pointer sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition sm:group-even:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20">
         <div className="pt-7 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-6 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]">
           <h3 className="text-2xl font-semibold">{title}</h3>
           <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
@@ -51,6 +55,9 @@ export default function Project({
             <motion.button
               className=" flex items-center bg-gradient-to-r from-red-800 to-red-600 text-white rounded-lg  px-6 py-2 mt-4 gap-1 dark:from-red-900 dark:to-red-700 dark:text-black"
               whileHover={{ scale: 1.2 }}
+              onClick={(e) => {
+                e.stopPropagation()
+              }}
             >
               Demo
               <RiYoutubeLine />
@@ -58,6 +65,9 @@ export default function Project({
             <motion.button
               className=" flex items-center bg-gradient-to-r from-slate-900 to-slate-700 text-white rounded-lg  px-6 py-2 mt-4 gap-1"
               whileHover={{ scale: 1.2 }}
+              onClick={(e) => {
+                e.stopPropagation()
+              }}
             >
               Source
               <RiGitBranchFill />
@@ -83,6 +93,23 @@ export default function Project({
         group-even:right-[initial] group-even:-left-40"
         />
       </section>
+
+
+      <dialog ref={refDialog} id="dialog">
+        <button onClick={() => {
+          refDialog.current.close()
+        }} aria-label="close" className="x">❌</button>
+        <h3 className="text-2xl font-semibold mb-2">{title}</h3>
+        <div className="flex gap-2">
+          <p className="">{detail}</p>
+          <Image src={imageUrl}
+            alt="Project I worked on"
+            quality={95}
+            className=" w-1/2 rounded shadow-2xl" />
+
+        </div>
+
+      </dialog>
     </motion.div>
   );
 }

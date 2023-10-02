@@ -11,7 +11,7 @@ import ParticleBackground from "@/components/particle-background";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Ricardo | Personal Portfolio",
+  title: "Trong Nhan | Personal Portfolio",
   description: "Ricardo is a full-stack developer with 8 years of experience.",
 };
 
