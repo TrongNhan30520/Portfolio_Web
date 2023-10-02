@@ -57,7 +57,7 @@ export default function Header() {
                     }}
                   ></motion.span>
                 )}
-                <Image src={IcContact} />
+
               </Link>
             </motion.li>
           ))}
