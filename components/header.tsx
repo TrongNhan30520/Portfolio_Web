@@ -7,7 +7,6 @@ import { links } from "@/lib/data";
 import Link from "next/link";
 import clsx from "clsx";
 import { useActiveSectionContext } from "@/context/active-section-context";
-import IcContact from "@/public/icons/Mail_custom_icon.json"
 
 export default function Header() {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
@@ -57,7 +56,6 @@ export default function Header() {
                     }}
                   ></motion.span>
                 )}
-
               </Link>
             </motion.li>
           ))}
