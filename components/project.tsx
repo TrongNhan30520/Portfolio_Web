@@ -6,6 +6,12 @@ import { RiYoutubeLine, RiGitBranchFill } from "react-icons/ri";
 import { TbHandClick } from "react-icons/tb";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -113,21 +119,33 @@ export default function Project({
           ❌
         </button>
         <div className="w-full h-full ">
-          <div className="flex justify-center w-full h-[40%] rounded-lg ease-in-out duration-200 hover:-translate-y-5 hover:shadow-stone-400">
-            <Image
-              src={imageUrl}
-              alt="Project I worked on"
-              quality={95}
-              className="w-auto rounded shadow-2xl"
-            />
+          <div className="flex justify-center w-full h-[40%] rounded-lg ease-in-out duration-200">
+            <Swiper
+              navigation={true}
+              modules={[Navigation]}
+              className="mySwiper"
+            >
+              <SwiperSlide className="justify-center">
+                <div className="flex w-full h-full items-center justify-center">
+                  <Image
+                    src={imageUrl}
+                    alt="Project I worked on"
+                    quality={95}
+                    className="w-auto h-full rounded shadow-2xl"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>Slide 2</SwiperSlide>
+              <SwiperSlide>Slide 3</SwiperSlide>
+            </Swiper>
           </div>
           <div className="pt-4 h-[50%]">
             <h3 className="text-2xl font-semibold">{title}</h3>
-            <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
+            <div className="mt-2 h-full overflow-auto leading-relaxed text-gray-700 dark:text-white/70">
               {detail}
-            </p>
+            </div>
           </div>
-          <div className="card-footer"></div>
+          {/* <div className="card-footer"></div> */}
         </div>
       </dialog>
     </motion.div>
