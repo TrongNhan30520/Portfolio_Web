@@ -21,6 +21,8 @@ export default function Project({
   tags,
   imageUrl,
   detail,
+  demo,
+  source,
 }: ProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
   const refDialog = useRef<HTMLDialogElement>(null);
@@ -62,31 +64,37 @@ export default function Project({
             ))}
           </ul>
           <div className="flex gap-2 py-2">
-            <motion.button
+            <motion.a
               className=" flex items-center bg-gradient-to-r from-red-800 to-red-600 text-white rounded-lg  px-6 py-2 mt-4 gap-1 dark:from-red-900 dark:to-red-700 dark:text-black"
               whileHover={{ scale: 1.2 }}
+              href={demo}
+              target="_blank"
               onClick={(e) => {
                 e.stopPropagation();
               }}
             >
               Demo
               <RiYoutubeLine />
-            </motion.button>
-            <motion.button
-              className=" flex items-center bg-gradient-to-r from-slate-900 to-slate-700 text-white rounded-lg  px-6 py-2 mt-4 gap-1"
-              whileHover={{ scale: 1.2 }}
-              onClick={(e) => {
-                e.stopPropagation();
-              }}
-            >
-              Source
-              <RiGitBranchFill />
-            </motion.button>
+            </motion.a>
+            {source && (
+              <motion.a
+                className=" flex items-center bg-gradient-to-r from-slate-900 to-slate-700 text-white rounded-lg  px-6 py-2 mt-4 gap-1"
+                whileHover={{ scale: 1.2 }}
+                href={source}
+                target="_blank"
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
+              >
+                Source
+                <RiGitBranchFill />
+              </motion.a>
+            )}
           </div>
         </div>
 
         <Image
-          src={imageUrl}
+          src={imageUrl[0]}
           alt="Project I worked on"
           quality={95}
           className="absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
@@ -125,23 +133,23 @@ export default function Project({
               modules={[Navigation]}
               className="mySwiper"
             >
-              <SwiperSlide className="justify-center">
-                <div className="flex w-full h-full items-center justify-center">
-                  <Image
-                    src={imageUrl}
-                    alt="Project I worked on"
-                    quality={95}
-                    className="w-auto h-full rounded shadow-2xl"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>Slide 2</SwiperSlide>
-              <SwiperSlide>Slide 3</SwiperSlide>
+              {imageUrl.map((url, idx) => (
+                <SwiperSlide key={idx} className="justify-center">
+                  <div className="flex w-full h-full items-center justify-center">
+                    <Image
+                      src={url}
+                      alt="Project I worked on"
+                      quality={95}
+                      className="w-auto h-full rounded shadow-2xl"
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
             </Swiper>
           </div>
           <div className="pt-4 h-[50%]">
             <h3 className="text-2xl font-semibold">{title}</h3>
-            <div className="mt-2 h-full overflow-auto leading-relaxed text-gray-700 dark:text-white/70">
+            <div className="mt-2 px-4 h-full overflow-auto leading-relaxed text-gray-700 dark:text-white/70">
               {detail}
             </div>
           </div>
