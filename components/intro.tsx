@@ -9,7 +9,7 @@ import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
-import MyPic from '@/public/images/mypic.png'
+import MyPic from '@/public/images/mypic1.jpeg'
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
@@ -40,6 +40,7 @@ export default function Intro() {
               priority={true}
               className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
             />
+
           </motion.div>
 
           <motion.span
