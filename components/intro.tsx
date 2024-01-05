@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import React from "react";
+import { block } from "million/react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
@@ -9,9 +10,9 @@ import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
-import MyPic from '@/public/images/mypic.png'
+import MyPic from "@/public/images/mypic.png";
 
-export default function Intro() {
+const IntroBlock = block(function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
@@ -118,4 +119,5 @@ export default function Intro() {
       </motion.div>
     </section>
   );
-}
+});
+export default IntroBlock;

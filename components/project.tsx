@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import { block } from "million/react";
 import { projectsData } from "@/lib/data";
 import { RiYoutubeLine, RiGitBranchFill } from "react-icons/ri";
 import { TbHandClick } from "react-icons/tb";
@@ -15,7 +16,7 @@ import "swiper/css/navigation";
 
 type ProjectProps = (typeof projectsData)[number];
 
-export default function Project({
+const ProjectBlock = block(function Project({
   title,
   note,
   url,
@@ -177,4 +178,5 @@ export default function Project({
       </dialog>
     </motion.div>
   );
-}
+});
+export default ProjectBlock;

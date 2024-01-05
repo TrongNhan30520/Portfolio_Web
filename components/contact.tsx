@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { block } from "million/react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
@@ -8,7 +9,7 @@ import { sendEmail } from "@/actions/sendEmail";
 import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
 
-export default function Contact() {
+const ContactBlock = block(function Contact() {
   const { ref } = useSectionInView("Contact");
 
   return (
@@ -71,4 +72,5 @@ export default function Contact() {
       </form>
     </motion.section>
   );
-}
+});
+export default ContactBlock;

@@ -1,8 +1,9 @@
 import React from "react";
+import { block } from "million/react";
 import { FaPaperPlane } from "react-icons/fa";
 import { experimental_useFormStatus as useFormStatus } from "react-dom";
 
-export default function SubmitBtn() {
+const SubmitBtnBlock = block(function SubmitBtn() {
   const { pending } = useFormStatus();
 
   return (
@@ -21,4 +22,5 @@ export default function SubmitBtn() {
       )}
     </button>
   );
-}
+});
+export default SubmitBtnBlock;

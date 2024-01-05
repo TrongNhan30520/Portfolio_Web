@@ -3,7 +3,7 @@
 import React from "react";
 import SectionHeading from "./section-heading";
 import { projectsData } from "@/lib/data";
-import Project from "./project";
+import ProjectBlock from "./project";
 import { useSectionInView } from "@/lib/hooks";
 
 export default function Projects() {
@@ -15,7 +15,7 @@ export default function Projects() {
       <div>
         {projectsData.map((project, index) => (
           <React.Fragment key={index}>
-            <Project {...project} />
+            <ProjectBlock {...project} />
           </React.Fragment>
         ))}
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { block } from "million/react";
 import SectionHeading from "./section-heading";
 import {
   VerticalTimeline,
@@ -11,7 +12,7 @@ import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { useTheme } from "@/context/theme-context";
 
-export default function Experience() {
+const ExperienceBlock = block(function Experience() {
   const { ref } = useSectionInView("Experience");
   const { theme } = useTheme();
 
@@ -55,4 +56,5 @@ export default function Experience() {
       </VerticalTimeline>
     </section>
   );
-}
+});
+export default ExperienceBlock;

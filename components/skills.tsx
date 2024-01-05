@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import React from "react";
+import { block } from "million/react";
 import SectionHeading from "./section-heading";
 import { skillsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
@@ -21,7 +22,7 @@ const fadeInAnimationVariants = {
   }),
 };
 
-export default function Skills() {
+const SkillsBlock = block(function Skills() {
   const { ref } = useSectionInView("Skills");
 
   return (
@@ -56,4 +57,5 @@ export default function Skills() {
       </ul>
     </section>
   );
-}
+});
+export default SkillsBlock;
