@@ -33,15 +33,15 @@ const ProjectBlock = block(function Project({
     target: ref,
     offset: ["0 1", "1.33 1"],
   });
-  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
   return (
     <motion.div
       ref={ref}
       style={{
-        scale: scaleProgess,
-        opacity: opacityProgess,
+        scale: scaleProgress,
+        opacity: opacityProgress,
       }}
       className="group mb-3 sm:mb-8 last:mb-0"
     >
@@ -122,6 +122,7 @@ const ProjectBlock = block(function Project({
         ref={refDialog}
         id="dialog"
         className="dark:bg-slate-500/10 dark:hover:bg-slate-700/30 dark:text-white"
+        style={{ scrollbarWidth: "inherit", zIndex: "100" }}
       >
         <button
           onClick={() => {
@@ -133,7 +134,7 @@ const ProjectBlock = block(function Project({
           ❌
         </button>
         <div className="w-full h-full ">
-          <div className="flex justify-center w-full h-[40%] rounded-lg ease-in-out duration-200">
+          <div className="flex justify-center w-full  rounded-lg ease-in-out duration-200">
             <Swiper
               navigation={true}
               modules={[Navigation]}
@@ -141,7 +142,7 @@ const ProjectBlock = block(function Project({
             >
               {imageUrl.map((url, idx) => (
                 <SwiperSlide key={idx} className="justify-center">
-                  <div className="flex w-full h-full items-center justify-center">
+                  <div className="flex w-full h-full items-center justify-center p-2">
                     <Image
                       src={url}
                       alt="Project I worked on"
@@ -153,7 +154,7 @@ const ProjectBlock = block(function Project({
               ))}
             </Swiper>
           </div>
-          <div className="pt-4 h-[50%]">
+          <div className="pt-4">
             <h3 className="text-2xl font-semibold">
               {title}{" "}
               {url && (
